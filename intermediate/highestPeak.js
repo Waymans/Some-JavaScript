@@ -11,14 +11,16 @@ var arr2 = [
 [4, 8, 7],
 [6, 9, 1]]; // 10
 function myFunction(n, queries) {
-    var res = [], len = queries.length, amt = len;
-	for (let i=1; i<len; i++) {
-    	 if (queries[i][0] < queries[i-1][1]) { // i=1, 1     i=2, 1,2      i=3, 1,2,3
-         	queries[i][2]+queries[i-1][2] > res ? res = queries[i][2]+queries[i-1][2]: null;
-         } else {
-           queries[i][2] > res ? res = queries[i][2]: null;
-         }
+    var res = [], finalNum = 0, comparNum = 0;
+    for (let i=0; i<=n; i++) { res[i] = 0 }
+	for (let i=0; i<queries.length; i++) {
+        res[queries[i][0]-1] += queries[i][2];
+      	res[queries[i][1]] += -queries[i][2];
     }
-    return res;
+    for (let i=0; i<res.length; i++) {
+    	comparNum += res[i];
+        comparNum > finalNum ? finalNum = comparNum: null;
+    }
+    return finalNum;
 }
 console.log(myFunction(n, arr1));
