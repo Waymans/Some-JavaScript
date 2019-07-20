@@ -1,11 +1,12 @@
 // finds how many switches in took to get the current array
 // from the array [1,2,3,4,5,...]
-// an element can only move ahead(to a lower index) twice
 function myFunction(arr) {
   var res = 0, num = 0;
   while (num < arr.length) { loop(num); }
+  // matches element to proper index: (i + 1)
   function loop(i) {
     var ele = arr[i];
+    // if not in correct spot, change it along with its pair
     if (ele !== i + 1) {
       arr.splice(i, 1, arr[ele-1]);
       arr.splice(ele-1, 1, ele);
