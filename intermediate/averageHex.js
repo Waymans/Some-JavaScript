@@ -7,8 +7,8 @@ function averageHex(hex1, hex2){
       g2 = parseInt(hex2.substring(2,4),16),
       b2 = parseInt(hex2.substring(4,6),16);
   
-  // I square the RGB values before averaging them, and then took the root of the result
-  // regular averages results in a much darker color. has to do with logarithms
+  // square the RGB values before averaging them, and then take the root of the result
+  // regular averages result in a much darker color. has to do with logarithms
   let r3 = Math.round(Math.sqrt((Math.pow(r1,2)+Math.pow(r2,2))/2)), 
       g3 = Math.round(Math.sqrt((Math.pow(g1,2)+Math.pow(g2,2))/2)), 
       b3 = Math.round(Math.sqrt((Math.pow(b1,2)+Math.pow(b2,2))/2));
