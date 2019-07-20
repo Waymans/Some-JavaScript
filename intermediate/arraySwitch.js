@@ -1,3 +1,6 @@
+// finds how many switches in took to get the current array
+// from the array [1,2,3,4,5,...]
+// an element can only move ahead(to a lower index) twice
 var arr1 = [4,3,1,2]; //3
 var arr2 = [7,1,3,2,4,5,6]; //5
 function myFunction(arr) {
