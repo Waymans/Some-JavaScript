@@ -1,3 +1,4 @@
+// can convert html to its entity
 function convertHTML(str) {
   var entity = {
     '&': '&amp;',
@@ -13,6 +14,5 @@ function convertHTML(str) {
   } 
   return str;
 }
-console.log(convertHTML("<>"));
-//logs "&lt;&gt;"
-//convertHTML("Sixty > twelve") should return Sixty &gt; twelve
+console.log(convertHTML("<>")); // &lt;&gt;
+console.log(convertHTML("Joe said, 'Hi'")); // Joe said, &apos;Hi&apos;

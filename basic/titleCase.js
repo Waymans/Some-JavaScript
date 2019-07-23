@@ -1,20 +1,11 @@
+// capitalizes first letter of every word
 function titleCase(str) {
-  var word = str.split(" ");
-  var newWord = [];
-  for (let i = 0; i < word.length; i++) {
-    for (let j = 0; j < word[i].length; j++) {
-      if (i == 0 && j == 0) {
-        newWord += word[i][0].toUpperCase();
-      }
-      else if (j == 0) {
-        newWord += " " + word[i][0].toUpperCase();
-      } else {
-        newWord += word[i][j].toLowerCase();
-      }
-    }
-  } 
-  return newWord;
+  var words = str.split(" ");
+  for (let i=0; i<words.length; i++) {
+    words[i] = words[i].toLowerCase();
+    words[i] = words[i].replace(words[i][0], words[i][0].toUpperCase());
+  }
+  return words.join(" ");
 }
-console.log(titleCase("hello THEre FrieND."))
-//logs 'Hello There Friend'
-//titleCase("sHoRt AnD sToUt") should return 'Short And Stout'
+console.log(titleCase("hello THEre FrieND.")); // 'Hello There Friend'
+console.log(titleCase("sHoRt AnD sToUt")); // 'Short And Stout'
