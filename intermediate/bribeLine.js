@@ -1,14 +1,15 @@
 // finds how many switches in took to get the current array
 // from the array [1,2,3,4,5,...]
-// element can move ahead(to lower index) at most twice
+// element can move ahead(to lower index) at most two times
 // element can be moved back - by others moving ahead - indefinitely
 function bribeLine(ele) {
 	var res = 0, i = 0;
     for (let i=0; i<ele.length; i++) {
 		// if ele is 3+ than what it should be
         if (ele[i] - (i + 1) > 2) {return 'Too chaotic';}
-		// starts at possible index (0 to 2 less than ele)
-		// adds to res if ele greater than number at index
+		
+		// compares ele to every number before it
+		// add to res if it finds any that are higher
         for (let j = Math.max(0, ele[i] - 2); j < i; j++) {
       		if (ele[j] > ele[i]) res++;
     	}

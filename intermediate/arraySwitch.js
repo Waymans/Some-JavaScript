@@ -1,6 +1,6 @@
 // finds how many switches in took to get the current array
 // from the array [1,2,3,4,5,...]
-function myFunction(arr) {
+function arraySwitch(arr) {
   var res = 0, num = 0;
   while (num < arr.length) { loop(num); }
   // matches element to proper index: (i + 1)
@@ -15,5 +15,5 @@ function myFunction(arr) {
   }
   return res;
 }
-console.log(myFunction([4,3,1,2])); // logs 3
-console.log(myFunction([7,1,3,2,4,5,6])); // logs 5
+console.log(arraySwitch([4,3,1,2])); // logs 3
+console.log(arraySwitch([7,1,3,2,4,5,6])); // logs 5
