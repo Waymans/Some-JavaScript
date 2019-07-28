@@ -1,18 +1,22 @@
-// count a's in str repeated num of times
-var num = 10;
-var str = 'aba'; // abaabaabaa
+// repeat str until its length equals n, then count a's
 function countA(s, n) {
-  var amt = 0;
-  for (let i=0; i<s.length; i++ ) {
-    s[i] === 'a' ? ++amt: null ;
-  }
-  var floor = Math.floor(n / s.length);
-  var total = amt * floor;
-  var remainder = n - s.length * floor;
-  var newStr = s.substring(0,remainder);
-  for (let i=0; i<newStr.length; i++ ) {
-    s[i] === 'a' ? ++total: null ;
-  }
-  return total
+  	let amt = 0, len = s.length;
+	
+  	// find amount of a's in initial string
+  	for (let i = 0; i < len; i++ ) {
+    	s[i] === 'a' ? ++amt : null;
+  	}
+	
+  	// get amount of a's after repetitions
+  	let floor = Math.floor(n / s.length),
+      	total = amt * floor,
+      	remainder = n - s.length * floor,
+      	newLen = s.substring(0, remainder).length;
+	
+  	// find remaining a's in partial string
+  	for (let i = 0; i < newLen; i++ ) {
+    	s[i] === 'a' ? ++total : null;
+  	}
+  	return total;
 }
-console.log(countA(str, num))
+console.log(countA('aba', 10)); // 7, 'abaabaabaa'
